@@ -1,20 +1,23 @@
-# Welcome to MkDocs
+# Oves test page
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Title
 
-## Commands
+> ![note]
+> test
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+### Sub-title
 
-## Project layout
+| lol1 | lol2 | lol3 |
+|------|------|------|
+| blab | fooo | bar  |
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+#### Sub-sub-title
 
+**bold font** and *italic font*, maybe even _underlined font_
 
-yay test
+##### subsubsubsubsubsub
+
+This is just regular
+text, testing newline logic
+
+for this flavor of markdown
