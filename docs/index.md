@@ -14,9 +14,9 @@
 
 #### Sub-sub-title
 
-**bold font** and *italic font*, maybe even __underlined font__ (nah)
+**bold font** and *italic font*, maybe even ^^underlined font^^
 
-~~strikethrough?~~
+~~strikethrough?~~ 
 
 ##### subsubsubsubsubsub
 
@@ -25,7 +25,8 @@ text, testing newline logic
 
 for this flavor of markdown
 
-I like `inline code` and even
+I like `inline code`; I can even have syntax highlighting for it,
+like `#!yaml some_key: value_pair`
 
 ```yaml
 code:
@@ -38,3 +39,19 @@ and:
 ```
 
 1. Oveerkul
+
+```markdown hl_lines="1 3-5"
+
+with mkdocs
+it is possible to
+highlight certain lines
+in a text, for example
+like i have done here
+lol foo wtf bbq
+blablablablablablabla
+
+```
+
+If you are running ==windows== hotkeys on a ==linux server==, expect trouble...
+
+For example, to f\*ck shit up, run ++ctrl+alt+delete++ in a linux serial console

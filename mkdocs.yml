@@ -2,6 +2,9 @@ site_name: My Docs
 
 theme:
   name: material
+  features:
+    - content.code.annotate # global annotations
+    - content.code.copy
 
 markdown_extensions:
   - admonition # callouts
@@ -9,5 +12,12 @@ markdown_extensions:
   - pymdownx.superfences # callouts, annotations
   - attr_list # annotations
   - md_in_html # annotations
+  - pymdownx.highlight # highlighting
+  - pymdownx.inlinehilite # inline highlighting
+  - pymdownx.caret # for underlines
+  - pymdownx.mark # for marking/highlighting
+  - pymdownx.tilde # for strikethrough
+  - pymdownx.keys # for showing keyboard keys
+
 
 
