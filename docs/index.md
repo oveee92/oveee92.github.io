@@ -2,8 +2,9 @@
 
 ## Title
 
-> ![note]
-> test
+!!! note
+
+    Testing callout blablablablabalabl
 
 ### Sub-title
 
