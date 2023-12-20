@@ -4,8 +4,10 @@ theme:
   name: material
 
 markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+  - admonition # callouts
+  - pymdownx.details # callouts
+  - pymdownx.superfences # callouts, annotations
+  - attr_list # annotations
+  - md_in_html # annotations
 
 

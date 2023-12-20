@@ -14,9 +14,9 @@
 
 #### Sub-sub-title
 
-**bold font** and *italic font*, maybe even __underlined font__
+**bold font** and *italic font*, maybe even __underlined font__ (nah)
 
-~strikethrough?~
+~~strikethrough?~~
 
 ##### subsubsubsubsubsub
 
@@ -32,4 +32,8 @@ code:
   blocks:
     - are
     - fun
+and:
+  annotations: are # possible
+  like: here # (1)!
 ```
+1. Oveerkul
