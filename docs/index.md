@@ -14,7 +14,9 @@
 
 #### Sub-sub-title
 
-**bold font** and *italic font*, maybe even _underlined font_
+**bold font** and *italic font*, maybe even __underlined font__
+
+~strikethrough?~
 
 ##### subsubsubsubsubsub
 
@@ -22,3 +24,12 @@ This is just regular
 text, testing newline logic
 
 for this flavor of markdown
+
+I like `inline code` and even
+
+```yaml
+code:
+  blocks:
+    - are
+    - fun
+```
