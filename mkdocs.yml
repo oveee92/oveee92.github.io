@@ -7,10 +7,14 @@ theme:
     - content.code.copy
 
 markdown_extensions:
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - admonition # callouts
   - pymdownx.details # callouts
   - pymdownx.superfences # callouts, annotations
   - attr_list # annotations
+  - abbr # abbreviations
   - md_in_html # annotations
   - pymdownx.highlight # highlighting
   - pymdownx.inlinehilite # inline highlighting
