@@ -2,6 +2,32 @@ site_name: Ovenotes
 
 theme:
   name: material
+  palette:
+
+    # Auto
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to auto mode
+
+    # For light mode
+    - media:  "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+    # For dark mode
+    - media:  "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: lime
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+
   features:
     - content.code.annotate # global annotations
     - content.code.copy
