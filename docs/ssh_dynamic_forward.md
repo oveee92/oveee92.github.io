@@ -86,7 +86,7 @@ Host another_destination
     Hostname some_other_other_hostname
     User firstlastname
     DynamicForward 8888 # <-- You can add as many as you want/need
-    LogLevel error # (1)!
+    LogLevel error
 
 ```
 
