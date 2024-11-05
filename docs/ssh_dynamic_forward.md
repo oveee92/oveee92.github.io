@@ -18,7 +18,7 @@ The following setup works really well in my situation:
 Set up your SSH config with Dynamic forwarding, if necessary using jumphosts,
 in your `~/.ssh/config`:
 
-```shell hl_lines="11,12"
+```shell hl_lines="11 12"
 
 Host jumphost
     Hostname some_hostname
