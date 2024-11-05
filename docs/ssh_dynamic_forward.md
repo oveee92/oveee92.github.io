@@ -9,23 +9,27 @@ But you don't want to have a dedicated browser or profile for it, and you don't 
 deactivate the proxy settings every time you need something that the SOCKS5 proxy cannot
 give you.
 
-In case you don't know what any of this means, here is a quick overview of how you can use it:
+**In case you don't know what any of this means**, here is a quick overview of how you can use it:
 
-Setting up Dynamic forward basically allows you to say "Hey Firefox, please navigate to this
+Setting up Dynamic forward basically allows you to say *"Hey Firefox, please navigate to this
 hostname and port, but do it as if you were actually running on the remote server I just ssh'ed
-into."
+into."*
 
-Very useful when you want access to a Web UI for a server that you can only reach via another server
-by logging in with SSH. This can easily be set up with Dynamic Forward, and editing your proxy
-settings either in the web browser or in the system settings.
+This is **very** useful when you want access to a Web UI for a server that you can only reach via
+another server by logging in with SSH. It can easily be set up by specifying a port for Dynamic
+Forwarding (for example `9999`), and editing your proxy settings either in the web browser or in
+the system settings to point to (for example) `localhost:9999`.
+
+Now you can enter a url like [https://my-service-web-ui:4321] and it will navigate to it via the
+internal server!
 
 However, this server is (of course) securely installed inside a restricted network, and cannot reach
-public URLs. So when you try to do some troubleshooting by navigating to https://duckduckgo.com,
+public URLs. So when you try to do some troubleshooting by navigating to [https://duckduckgo.com],
 your Firefox server might not be able to reach it, and your SSH terminal will get spammed with
-Connection refused, Forbidden Access or similar, depending on your network setup.
+`Connection refused`, `Access Denied`, `Forbidden` or similar, depending on your network setup.
 
-Separating the proxy configuration into different Multi-Account containers will allow you to just
-open a tab in a container that represents where your firefox should be connecting from.
+Separating the different proxy configurations into different Multi-Account containers will allow you
+to just open a tab in a container that represents *where your firefox should be connecting from*.
 
 It would look something like this:
 
@@ -43,7 +47,7 @@ graph LR
 ```
 
 
-The following setup works really well in my situation.
+This setup has worked really well for me in several cases.
 
 ## Setup
 
