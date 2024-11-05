@@ -5,18 +5,45 @@
 So you want to use SSH dynamic forwarding with your browser.
 Or maybe you need to use some internal SOCKS5 proxy to access your company services.
 
-``` mermaid
-graph LR
-  A{Firefox} -->|via| B(Container1) -->|https| H>google.com]
-  A{Firefox} -->|via| C(Container2) -->|ssh| X[internal server1] -->|https| I>internal service1]
-  A{Firefox} -->|via| D(Container3) -->|ssh| Y[internal server2] -->|https| J>internal service2]
-```
-
 But you don't want to have a dedicated browser or profile for it, and you don't want to
 deactivate the proxy settings every time you need something that the SOCKS5 proxy cannot
 give you.
 
-The following setup works really well in my situation:
+In case you don't know what any of this means, here is a quick overview of how you can use it:
+
+Setting up Dynamic forward basically allows you to say "Hey Firefox, please navigate to this
+hostname and port, but do it as if you were actually running on the remote server I just ssh'ed
+into."
+
+Very useful when you want access to a Web UI for a server that you can only reach via another server
+by logging in with SSH. This can easily be set up with Dynamic Forward, and editing your proxy
+settings either in the web browser or in the system settings.
+
+However, this server is (of course) securely installed inside a restricted network, and cannot reach
+public URLs. So when you try to do some troubleshooting by navigating to https://duckduckgo.com,
+your Firefox server might not be able to reach it, and your SSH terminal will get spammed with
+Connection refused, Forbidden Access or similar, depending on your network setup.
+
+Separating the proxy configuration into different Multi-Account containers will allow you to just
+open a tab in a container that represents where your firefox should be connecting from.
+
+It would look something like this:
+
+``` mermaid
+graph LR
+  A{Firefox}
+  A -->|using| B(Default/None Container) -->|https:443| H>google.com]
+  A -->|using| C(Server1) -.->|ssh| X[internal server1]
+  X -->|https:443| I>internal service1]
+  A -->|using| D(Server2) -.->|ssh| Y[internal server2]
+  Y -->|https:8001| J>internal service2]
+
+  C -->|SOCKS| X
+  D -->|SOCKS| Y
+```
+
+
+The following setup works really well in my situation.
 
 ## Setup
 
