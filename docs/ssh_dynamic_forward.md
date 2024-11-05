@@ -100,8 +100,10 @@ In Firefox, install the following extensions:
 - Multi-Account Containers
 - Sidebery (or any other plugin that lets to specify SOCKS5 proxy per container)
 
-Add `localhost:9999` (or whichever port you specified in your SSH config) to Firefox,
-or to the Multiaccount-container of your choice. You can create multiple containers too,
+Create one container for each relevant Dynamic Forwarding server.
+
+Add `localhost:9999` (or whichever port you specified in your SSH config) to
+the Multiaccount-container of your choice. You can create multiple containers too,
 if you need access to services in multiple separated zones.
 
 
