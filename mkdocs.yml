@@ -38,7 +38,11 @@ markdown_extensions:
         - includes/abbreviations.md
   - admonition # callouts
   - pymdownx.details # callouts
-  - pymdownx.superfences # callouts, annotations
+  - pymdownx.superfences: # callouts, annotations
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - attr_list # annotations
   - abbr # abbreviations
   - md_in_html # annotations

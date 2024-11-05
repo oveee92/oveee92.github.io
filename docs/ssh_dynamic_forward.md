@@ -5,6 +5,13 @@
 So you want to use SSH dynamic forwarding with your browser.
 Or maybe you need to use some internal SOCKS5 proxy to access your company services.
 
+``` mermaid
+graph LR
+  A{Firefox} -->|via| B(Container1) -->|https| H>google.com]
+  A{Firefox} -->|via| C(Container2) -->|ssh| X[internal server1] -->|https| I>internal service1]
+  A{Firefox} -->|via| D(Container3) -->|ssh| Y[internal server2] -->|https| J>internal service2]
+```
+
 But you don't want to have a dedicated browser or profile for it, and you don't want to
 deactivate the proxy settings every time you need something that the SOCKS5 proxy cannot
 give you.
