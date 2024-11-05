@@ -9,19 +9,23 @@ But you don't want to have a dedicated browser or profile for it, and you don't 
 deactivate the proxy settings every time you need something that the SOCKS5 proxy cannot
 give you.
 
-**In case you don't know what any of this means**, here is a quick overview of how you can use it:
+This post might solve your issues.
+
+## More thorough intro
+
+**In case you don't know what any of that means**, here is a quick overview of how you can use it:
 
 Setting up Dynamic forward this way basically allows you to say *"Hey Firefox, please navigate to
-this hostname and port, but do it as if you were actually running on the remote server I just ssh'ed
+this hostname and port, but do it as if you were actually running on the remote server I just SSH'ed
 into."*
 
-This is **very** useful when you want access to a Web UI for a server that you can only reach via
-another server by logging in with SSH. It can easily be set up by specifying a port for Dynamic
-Forwarding (for example `9999`), and editing your proxy settings either in the web browser or in
-the system settings to point to (for example) `localhost:9999`.
+This is **very** useful when you want access to a Web UI for a server that you can normally only
+reach via another server by logging in with SSH. It can easily be set up by specifying a port for
+Dynamic Forwarding (for example `9999`), and editing your proxy settings either in the web browser
+or in the system settings to point to (for example) `localhost:9999`.
 
-Now you can enter a url like <https://my-service-web-ui:4321> and it will navigate to it via the
-internal server!
+Now you can enter a url like <https://my-service-web-ui:4321> in Firefox and it will navigate to it
+via the internal server!
 
 However, this server is (of course) securely installed inside a restricted network, and cannot reach
 public URLs. So when you try to do some troubleshooting by navigating to <https://duckduckgo.com>,
@@ -46,8 +50,15 @@ graph LR
   D -->|SOCKS| Y
 ```
 
+**Side note**: Multi-account containers are also great to set up regardless of proxying/forwarding, for
+example if you:
 
-This setup has worked really well for me in several cases.
+- have to log into multiple cloud consoles for AWX/Azure or others which use Single Sign-on, and
+  you don't like having to log in and out or using Private browsing to achieve it.
+- want to have something like a facebook, discord or youtube account logged in, but you don't want
+  to mix work and personal profiles.
+
+This setup has worked really well for me, you might want to give it a try!
 
 ## Setup
 
