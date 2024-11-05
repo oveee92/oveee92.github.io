@@ -11,8 +11,8 @@ give you.
 
 **In case you don't know what any of this means**, here is a quick overview of how you can use it:
 
-Setting up Dynamic forward basically allows you to say *"Hey Firefox, please navigate to this
-hostname and port, but do it as if you were actually running on the remote server I just ssh'ed
+Setting up Dynamic forward this way basically allows you to say *"Hey Firefox, please navigate to
+this hostname and port, but do it as if you were actually running on the remote server I just ssh'ed
 into."*
 
 This is **very** useful when you want access to a Web UI for a server that you can only reach via
@@ -20,11 +20,11 @@ another server by logging in with SSH. It can easily be set up by specifying a p
 Forwarding (for example `9999`), and editing your proxy settings either in the web browser or in
 the system settings to point to (for example) `localhost:9999`.
 
-Now you can enter a url like [https://my-service-web-ui:4321] and it will navigate to it via the
+Now you can enter a url like <https://my-service-web-ui:4321> and it will navigate to it via the
 internal server!
 
 However, this server is (of course) securely installed inside a restricted network, and cannot reach
-public URLs. So when you try to do some troubleshooting by navigating to [https://duckduckgo.com],
+public URLs. So when you try to do some troubleshooting by navigating to <https://duckduckgo.com>,
 your Firefox server might not be able to reach it, and your SSH terminal will get spammed with
 `Connection refused`, `Access Denied`, `Forbidden` or similar, depending on your network setup.
 
@@ -37,9 +37,9 @@ It would look something like this:
 graph LR
   A{Firefox}
   A -->|using| B(Default/None Container) -->|https:443| H>google.com]
-  A -->|using| C(Server1) -.->|ssh| X[internal server1]
+  A -->|using| C(Server1 Container) -.->|ssh| X[Internal server1]
   X -->|https:443| I>internal service1]
-  A -->|using| D(Server2) -.->|ssh| Y[internal server2]
+  A -->|using| D(Server2 Container) -.->|ssh| Y[Internal server2]
   Y -->|https:8001| J>internal service2]
 
   C -->|SOCKS| X
@@ -71,6 +71,12 @@ Host final_destination
     DynamicForward 9999 # <-- This is the important part
     LogLevel error # (1)!
 
+Host another_destination
+    Hostname some_other_other_hostname
+    User firstlastname
+    DynamicForward 8888 # <-- You can add as many as you want/need
+    LogLevel error # (1)!
+
 ```
 
 1. Add this to supress "Connection refused" messages that appear every time
@@ -84,7 +90,8 @@ In Firefox, install the following extensions:
 - Sidebery (or any other plugin that lets to specify SOCKS5 proxy per container)
 
 Add `localhost:9999` (or whichever port you specified in your SSH config) to Firefox,
-or to the Multiaccount-container of your choice
+or to the Multiaccount-container of your choice. You can create multiple containers too,
+if you need access to services in multiple separated zones.
 
 
 ## Done
