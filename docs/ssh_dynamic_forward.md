@@ -51,7 +51,7 @@ graph LR
   D -->|SOCKS| Y
 ```
 
-!!! tip Side note!
+!!! tip "Side note!"
 
     Multi-account containers are also great to set up regardless of proxying/forwarding, for
     example if you:
@@ -110,7 +110,7 @@ the Multiaccount-container of your choice. You can create multiple containers to
 if you need access to services in multiple separated zones.
 
 
-!!! success Done!
+!!! success "Done!"
 
     You can now browse whatever you would have access to on the remote server, as long as you:
     
