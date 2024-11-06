@@ -17,7 +17,7 @@ good measure. It never hurts, sometimes does nothing, mostly helps.
 
     It is possible to create custom completion files for your custom scripts
 
-++alt+.++
+++alt+\.++
 
 Probably my second most used combination. It inserts **the last argument in the previous command**.
 
@@ -25,13 +25,13 @@ This is surprisingly good in many cases.
 
 ```bash
 mkdir -p my_directory/with_the/longest-name_possible
-cd ++alt+.++ # To navigate to the newly created directory
+cd [alt+.] # To navigate to the newly created directory
 
 cat myfile
-cp ++alt+.++ ++alt+.++.bak # Make a backup of the file
+cp [alt+.] [alt+.].bak # Make a backup of the file
 
 vim myscript.sh
-./++alt+.++ # To execute the script you just edited
+./[alt+.] # To execute the script you just edited
 git add ++alt+.++ # To stage it with version control
 
 ```
@@ -48,7 +48,20 @@ firewall-cmd --reload`, or something else where you want to repeat the command m
 
 ++ctrl+r++
 
-Reverse command search. TODO
+Reverse command search. You know what your command is, but you don't feel like typing it all.
+Just use ++ctrl+r++, then search for something unique to your command. Didn't find it on the first
+try? Just run ++ctrl+r++ again for the next result. Mistyped? Use ++ctrl+c++ and try again.
+
+`!!`
+
+++ctrl+u++ and ++ctrl+y++
+
+++ctrl+a++ and ++ctrl+e++
+
+++ctrl+l++
+
+
+
 
 
 ## Navigation
