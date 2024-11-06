@@ -60,4 +60,4 @@ blablablablablablabla
 
 If you are running ==windows== hotkeys on a ==linux server==, expect trouble...
 
-For example, to f\*ck shit up, run ++ctrl+alt+delete++ in a linux serial console
+For example, to spice up life, run ++ctrl+alt+delete++ in a linux serial console
