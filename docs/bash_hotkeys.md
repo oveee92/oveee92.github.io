@@ -17,11 +17,12 @@ good measure. It never hurts, sometimes does nothing, mostly helps.
 
     It is possible to create custom completion files for your custom scripts
 
-++alt+\.++
+++alt+period++
 
 Probably my second most used combination. It inserts **the last argument in the previous command**.
 
-This is surprisingly good in many cases.
+This sounds obscure, but is surprisingly good in many cases, because of how arguments in the CLI
+is usually structured (e.g. filename goes last)
 
 ```bash
 mkdir -p my_directory/with_the/longest-name_possible
@@ -32,7 +33,7 @@ cp [alt+.] [alt+.].bak # Make a backup of the file
 
 vim myscript.sh
 ./[alt+.] # To execute the script you just edited
-git add ++alt+.++ # To stage it with version control
+git add [alt+.] # To stage it with version control
 
 ```
 
@@ -44,7 +45,7 @@ A variation of the previous hotkey. Will paste the first argument of the previou
 actually the base command itself)
 
 Useful when you have a difficult-to-write command like `firewall-cmd --add-port=123/udp` then 
-firewall-cmd --reload`, or something else where you want to repeat the command multiple times.
+`firewall-cmd --reload`, or something else where you want to repeat the command multiple times.
 
 ++ctrl+r++
 
