@@ -43,7 +43,7 @@ The list goes on.
 
 !!! tip
 
-    ++alt+0++
+    ++alt+0++ ++alt+period++
     
     A variation of the previous hotkey. Will paste the first argument of the previous command (which is
     actually the base command itself)
@@ -51,7 +51,7 @@ The list goes on.
     Useful when you have a difficult-to-write command like `firewall-cmd --add-port=123/udp` then 
     `firewall-cmd --reload`, or something else where you want to repeat the command multiple times.
 
-    Also useful when you want to use the man page for the previous command, like `man [alt+0]`
+    Also useful when you want to use the man page for the previous command, like `man [alt+0][alt+.]`
 
 
 ### ++ctrl+r++
