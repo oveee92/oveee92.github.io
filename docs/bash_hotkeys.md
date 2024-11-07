@@ -1,10 +1,10 @@
 # Bash hotkeys and tricks
 
-These are my most-used hotkeys and tricks in the command line
+These are my most-used hotkeys and tricks with the command line
 
 ## Completion
 
-++tab++
+### ++tab++
 
 The most used key by far. I probably use this between every 5 other keystrokes on average, just for
 good measure. It never hurts, sometimes does nothing, mostly helps.
@@ -19,7 +19,7 @@ good measure. It never hurts, sometimes does nothing, mostly helps.
     It is possible to create custom completion files for your custom scripts
 
 
-++alt+period++
+### ++alt+period++
 
 Probably my second most used combination. It inserts **the last argument in the previous command**.
 
@@ -60,7 +60,7 @@ Reverse command search. You know what your command is, but you don't feel like t
 Just use ++ctrl+r++, then search for something unique to your command. Didn't find it on the first
 try? Just run ++ctrl+r++ again for the next result. Mistyped? Use ++ctrl+c++ and try again.
 
-`!!`
+### `!!`
 
 This basically just means "the entire last command". I've found about 2 uses for it, but I use them
 often:
@@ -69,21 +69,55 @@ often:
 
 `watch !!` - Run the last command over and over.
 
+## Editing
 
-++ctrl+u++ and ++ctrl+y++
+### ++ctrl+l++
 
-++ctrl+a++ and ++ctrl+e++
+Clears the screen, giving you a fresh start without needing to hold ++enter++ forever.
 
-++ctrl+l++
+### ++ctrl+a++ and ++ctrl+e++
 
+To move the cursor to the start (++ctrl+a++) and end (++ctrl+e++) of the current line.
 
+### ++ctrl+u++
 
+++ctrl+u++ cuts/removes anything to the left of the cursor.
+
+Less used, but the opposite is ++ctrl+k++ which cuts/removes anything to the right of the cursor.
+
+### ++ctrl+y++
+
+++ctrl+y++ will paste whatever you've last cut with ++ctrl+u++.
+
+A very useful combination is ++ctrl+e++ ++ctrl+u++, which removes the entire line you are working
+on. Now you can run another command, maybe an `ls` command to ensure you are doing the right thing,
+before pasting the other command back with ++ctrl+y++ and running it.
+
+### ++ctrl+w++
+
+Cuts/removes one word at the time, to the left. Note that if you run multiple ++ctrl+w++ commands
+without doing something else in between, the words will be added to the paste buffer, so that when
+you run ++ctrl+y++ later, all the words you deleted with ++ctrl+w++ sequentially will be pasted
+back.
 
 
 ## Navigation
 
-`cd`
+### `cd`
 
-`cd -`
+The same as `cd ~`, `cd $HOME`, etc.
 
-`cd ~user`
+### `cd -`
+
+Will navigate to the previous folder you were in. Very nice when you need to jump to another folder
+temporarily, then go back.
+
+```shell
+cd ../my/other/folder
+ls -l
+cd - # to go back to where you were
+```
+
+### `cd ~foo`
+
+Go the the home folder of the `foo` user
