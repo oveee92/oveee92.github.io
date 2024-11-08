@@ -136,6 +136,14 @@ them pretty often:
 
 `watch !!` - Run the last command over and over automatically to watch for changes.
 
+!!! tip
+
+    There are *a lot* of these "Event designators", starting with `!`, but this is the one I
+    actually use. You can also use `!123` for the 123rd entry in your bash history, `!-1` for the
+    latest minus 1 command, etc. The issue is that you won't know for sure what the command
+    represents until you either run it, or expand it with ++esc++ ++ctrl+e++.
+
+
 ## Editing
 
 Commands to make changes to the current work-in-progress command and terminal output.
@@ -189,6 +197,12 @@ back up and get it later, but why wait when you can just pause and do it right n
 
 To jump word-by-word instead of letter-by-letter through your current command.
 
+### ++ctrl+x++ ++ctrl+e++
+
+Opens an editor (determined by the EDITOR environment variable), including whatever you've already
+wrote on the prompt. Very useful for commands with many parameters like complex curl commands.
+
+Save and quit to execute it.
 
 ## Directory navigation
 
