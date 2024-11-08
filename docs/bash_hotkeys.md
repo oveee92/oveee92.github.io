@@ -94,7 +94,7 @@ For example, for the following history:
 
 ### ++ctrl+d++
 
-Basically runs the ´exit` command **when your prompt is empty**. If you've started writing
+Basically runs the `exit` command **when your prompt is empty**. If you've started writing
 something in the terminal, this hotkey does nothing.
 
 It will let you:
