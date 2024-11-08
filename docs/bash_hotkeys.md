@@ -139,7 +139,7 @@ without doing something else in between, the words will be added to the paste bu
 you run ++ctrl+y++ later, all the words you deleted with ++ctrl+w++ sequentially will be pasted
 back.
 
-### ++alt+up+down+left+right++
+### ++alt++ ++left++ and ++right++
 
 To jump word-by-word instead of letter-by-letter through your current command.
 
