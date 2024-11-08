@@ -144,6 +144,11 @@ Commands to make changes to the current work-in-progress command and terminal ou
 
 Clears the screen, giving you a fresh start without needing to hold ++enter++ forever.
 
+Why not just use `clear`?
+
+- If you're in the middle of writing something in the prompt, that will be preserved.
+- Also ++ctrl+l++ is faster.
+
 ### ++ctrl+a++ and ++ctrl+e++
 
 To move the cursor to the start (++ctrl+a++) and end (++ctrl+e++) of the current line.
