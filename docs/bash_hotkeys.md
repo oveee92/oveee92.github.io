@@ -8,18 +8,22 @@ me be (or feel) more efficient.
 
 ## Completion
 
+Hotkeys that makes the shell do more of the typing for you.
+
 ### ++tab++
 
-Goes without saying for many people, but it is my most used key by far. I probably use this between
-every 5 other keystrokes on average, just for good measure. It never hurts, sometimes does nothing,
-mostly helps. Single-tap it to autocomplete unambigiously, double-tap it to list alternatives.
+Goes without saying for many people, but it is my most used key **by far**. I probably use this
+between every 5 other keystrokes on average, just for good measure. It never hurts, sometimes does
+nothing, mostly helps. Single-tap it to autocomplete unambigiously, double-tap it to list
+alternatives. It:
 
-- Completes file paths
-- Completes environment variable names
-- Completes commands and command arguments (if this doesn't work, make sure you have the
+- completes file paths
+- helpfully enters the slash character for you in path names
+- completes environment variable names
+- completes commands and command arguments (if this doesn't work, make sure you have the
   bash-completion package installed).
-- Hints at availably command arguments (note that it might not be 100% complete, it depends on the
-  content of the bash-completion script for each command)
+- hints at availably command arguments (note that it might not be 100% accurate or complete, it
+  depends on the content of the bash-completion script for the specific command)
 
 !!! tip
 
@@ -31,21 +35,21 @@ mostly helps. Single-tap it to autocomplete unambigiously, double-tap it to list
 
 Probably my second most used combination. Inserts **the last argument from the previous command**.
 
-This might sound obscure and silly, but is surprisingly good, because of how arguments on the
+This might sound obscure and a bit silly, but is surprisingly good, because of how arguments on the
 command line is usually structured (e.g. filename goes last).
 
 For example:
 
 ```bash
-mkdir -p my_directory/with_the/longest-name_possible
-cd [alt+.] # To navigate to the newly created directory
-
-cat myfile
-cp [alt+.] [alt+.].bak # Make a backup of the file
-
-vim myscript.sh
-./[alt+.] # To execute the script you just edited
-git add [alt+.] # To stage it with version control
+mkdir -p my_directory/with_the/longest-name_possible # make a nested directory
+cd [alt+.] # navigate to the newly created directory
+# or
+ls -l myfile # list a file
+cp [alt+.] [alt+.].bak # make a backup of the file
+# or
+vim myscript.sh # edit a file
+./[alt+.] # execute the script you just edited
+git add [alt+.] # stage it with version control
 
 ```
 
@@ -61,11 +65,10 @@ For example, for the following history:
 1236 echo test1 test2
 ```
 
-First ++alt+period++ inserts `test2`
-
-Second ++alt+period++ inserts `-l`
-
-Third ++alt+period++ inserts `test.sh`
+- First ++alt+period++ inserts `test2`
+- Second ++alt+period++ inserts `-l`
+- Third ++alt+period++ inserts `test.sh`
+- etc.
 
 !!! tip
 
@@ -75,8 +78,8 @@ Third ++alt+period++ inserts `test.sh`
     (which is actually the base command itself!)
 
     It also works with other numbers than 0, but keeping track of which parameter has which index
-    gets difficult, so mostly its better to copy-paste or write it manually at that point.
-    `0` (first) and `.` (last) is easy to keep track of.
+    gets difficult and is error-prone, so I find it is mostly its better to copy-paste or write it
+    manually at that point. `0` (first) and `.` (last) is easy to keep track of.
     
     Useful when you have a difficult-to-write command, or a command that shares the first letters
     with other commands, making Tab completion less than ideal:
@@ -89,9 +92,32 @@ Third ++alt+period++ inserts `test.sh`
     Also useful when you want to use the man page for the last command, like `man [alt+0][alt+.]`
 
 
+### ++ctrl+d++
+
+Basically runs the ´exit` command **when your prompt is empty**. If you've started writing
+something in the terminal, this hotkey does nothing.
+
+It will let you:
+
+- Exit out of your `sudo -i` shell
+- exit your current SSH session
+- exit your interactive Python interpreter
+- exit out of your mysql client
+- quit your tmux session
+- and probably much more
+
+without writing the exit command explicitly.
+
+
 ### ++ctrl+r++
 
-Reverse command search. You know what your command is, but you don't feel like typing it all.
+Reverse command search.
+
+- You know what your command is, but you don't feel like typing it all.
+- You remember that you need to export a variable, but you don't remember the exact details.
+- You just want to quickly re-run the last `vim` command without scrolling through the history
+  with ++up++.
+
 Just use ++ctrl+r++, then search for something unique to your command.
 
 Didn't find it on the first try? Just run ++ctrl+r++ again for the next match.
@@ -110,8 +136,9 @@ them pretty often:
 
 `watch !!` - Run the last command over and over automatically to watch for changes.
 
-
 ## Editing
+
+Commands to make changes to the current work-in-progress command and terminal output.
 
 ### ++ctrl+l++
 
@@ -142,9 +169,21 @@ without doing something else in between, the words will be added to the paste bu
 you run ++ctrl+y++ later, all the words you deleted with ++ctrl+w++ sequentially will be pasted
 back.
 
+### ++ctrl+s++ and ++ctrl+q++
+
+You probably used ++ctrl+s++ before, "freezing" your terminal. It can be unfrozen with ++ctrl+q++.
+
+But it can be used intentionally too, for example if you want to highlight/copy something before
+some other output scrolls it away.
+
+Depending on your terminal emulator, multiplexer, line history, etc. you might be able to scroll
+back up and get it later, but why wait when you can just pause and do it right now?
+
+
 ### ++alt++ ++left++ and ++right++
 
 To jump word-by-word instead of letter-by-letter through your current command.
+
 
 ## Directory navigation
 
