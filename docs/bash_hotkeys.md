@@ -61,16 +61,18 @@ For example, for the following history:
 1236 echo test1 test2
 ```
 
-First ++alt+period++ -> `test2`
-Second ++alt+period++ -> `-l`
-Third ++alt+period++ -> `test.sh`
+First ++alt+period++ inserts `test2`
+
+Second ++alt+period++ inserts `-l`
+
+Third ++alt+period++ inserts `test.sh`
 
 !!! tip
 
     You can also use ++alt+0++ then ++alt+period++
     
     A variation of the ++alt+period++ hotkey. Will paste the 0th argument of the previous command
-    (which is actually the base command itself).
+    (which is actually the base command itself!)
 
     It also works with other numbers than 0, but keeping track of which parameter has which index
     gets difficult, so mostly its better to copy-paste or write it manually at that point.
@@ -78,6 +80,7 @@ Third ++alt+period++ -> `test.sh`
     
     Useful when you have a difficult-to-write command, or a command that shares the first letters
     with other commands, making Tab completion less than ideal:
+
     - `firewall-cmd --add-port=123/udp` then `firewall-cmd --reload`. Last command becomes:
       (`[alt+0][alt+.] --reload`)
     - `systemctl status myservice` then `systemctl restart myservice`. Last command becomes:
