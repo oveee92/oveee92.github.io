@@ -2,9 +2,20 @@
 
 These are my most-used hotkeys and tricks with the command line.
 
-Bash has *a lot* of functionality, but much of it is not really more efficient than using the mouse
-or typing stuff manually. This is a collection of the hotkeys I've actually internalised and helps
-me be (or feel) more efficient.
+Bash has *a lot* of functionality (the man pages are literally 6500+ lines), with hotkeys, aliases
+and shortcuts, but much of it is not really more efficient than using the mouse or typing stuff
+manually, unless you are in an environment where you for example don't have the mouse, or the
+terminal is very slow.
+
+This is a collection of the hotkeys I've actually internalised and helps me be (or at least feel)
+more efficient in a "normal" environment.
+
+They may seem like tiny gains (and maybe they are), but it adds up when you constantly save a few
+seconds by avoiding:
+
+- typing long words or symbols
+- backtracking because of typos
+- tiny frustrations
 
 ## Completion
 
@@ -216,14 +227,14 @@ Save and quit to execute it, quit without saving to cancel it.
 !!! tip
     
     If you get an error like `bash: emacs: command not found...`, that means you haven't set the
-    EDITOR or VISUAL variable, defaulting it to emacs. Set it with `export EDITOR=vim` or whatever
-    you prefer, and add it to your `~/.bashrc` to make it permanent.
+    `EDITOR` or `VISUAL` variable, defaulting it to emacs. Set it with `export EDITOR=vim` or
+    whatever you prefer, and add it to your `~/.bashrc` to make it permanent.
 
 ## Directory navigation
 
 ### `cd`
 
-The same as `cd ~`, `cd $HOME`, etc.
+Navigates to your home folder, the same way `cd ~`, `cd $HOME` and `cd /home/$USER/` does.
 
 ### `cd -`
 
@@ -238,4 +249,7 @@ cd - # to go back to where you were
 
 ### `cd ~foo`
 
-Go the the home folder of the `foo` user
+Go the the home folder of the `foo` user. Mostly useful when logged in as `root`.
+
+This is just a nice little shortcut when your home folder is in `/home` but very useful if you
+don't know where the home folder is.
