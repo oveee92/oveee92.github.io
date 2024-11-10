@@ -81,8 +81,8 @@ For example, for the following history:
     gets difficult and is error-prone, so I find it is mostly its better to copy-paste or write it
     manually at that point. `0` (first) and `.` (last) is easy to keep track of.
     
-    Useful when you have a difficult-to-write command, or a command that shares the first letters
-    with other commands, making Tab completion less than ideal:
+    Useful when you have a command that you need to run more than once, but it is difficult to write
+    or shares the first letters with other commands, making Tab completion less effective:
 
     - `firewall-cmd --add-port=123/udp` then `firewall-cmd --reload`. Last command becomes:
       (`[alt+0][alt+.] --reload`)
@@ -100,13 +100,13 @@ something in the terminal, this hotkey does nothing.
 It will let you:
 
 - Exit out of your `sudo -i` shell
-- exit your current SSH session
-- exit your interactive Python interpreter
-- exit out of your mysql client
-- quit your tmux session
+- log out your current serial or SSH session
+- quit your interactive Python interpreter
+- exit out of your mysql client shell
+- end your tmux session
 - and probably much more
 
-without writing the exit command explicitly.
+without writing the exit commands explicitly.
 
 
 ### ++ctrl+r++
@@ -148,6 +148,7 @@ them pretty often:
 
 Commands to make changes to the current work-in-progress command and terminal output.
 
+
 ### ++ctrl+l++
 
 Clears the screen, giving you a fresh start without needing to hold ++enter++ forever.
@@ -157,9 +158,11 @@ Why not just use `clear`?
 - If you're in the middle of writing something in the prompt, that will be preserved.
 - Also ++ctrl+l++ is faster.
 
+
 ### ++ctrl+a++ and ++ctrl+e++
 
 To move the cursor to the start (++ctrl+a++) and end (++ctrl+e++) of the current line.
+
 
 ### ++ctrl+u++
 
@@ -171,8 +174,8 @@ Less used, but the opposite is ++ctrl+k++ which cuts/removes anything to the rig
 
 Will paste whatever you've last cut with ++ctrl+u++.
 
-A very useful combination is ++ctrl+e++ ++ctrl+u++, which removes the entire line you are working
-on. Now you can run another command, maybe an `ls` command to ensure you are doing the right thing,
+A very useful combination is ++ctrl+e++ ++ctrl+u++, which removes the entire line in your prompt.
+Now you can run another command, maybe an `ls` command to ensure you are doing the right thing,
 before pasting the other command back with ++ctrl+y++ and running it.
 
 ### ++ctrl+w++
@@ -182,12 +185,16 @@ without doing something else in between, the words will be added to the paste bu
 you run ++ctrl+y++ later, all the words you deleted with ++ctrl+w++ sequentially will be pasted
 back.
 
+I use it mainly to remove chunks of the prompt quickly though.
+
 ### ++ctrl+s++ and ++ctrl+q++
 
-You probably used ++ctrl+s++ before, "freezing" your terminal. It can be unfrozen with ++ctrl+q++.
+You probably used ++ctrl+s++ before by accident, "freezing" your terminal. It can be unfrozen with
+++ctrl+q++.
 
 But it can be used intentionally too, for example if you want to highlight/copy something before
-some other output scrolls it away.
+some other output scrolls it away, or if you just want an extra second to read whatever the output
+says.
 
 Depending on your terminal emulator, multiplexer, line history, etc. you might be able to scroll
 back up and get it later, but why wait when you can just pause and do it right now?
@@ -197,12 +204,20 @@ back up and get it later, but why wait when you can just pause and do it right n
 
 To jump word-by-word instead of letter-by-letter through your current command.
 
+
 ### ++ctrl+x++ ++ctrl+e++
 
-Opens an editor (determined by the EDITOR environment variable), including whatever you've already
-wrote on the prompt. Very useful for commands with many parameters like complex curl commands.
+Opens an editor (determined by the `EDITOR` and `VISUAL` environment variable), including whatever
+you've already wrote on the prompt. Very useful for commands with many parameters like complex curl
+commands.
 
-Save and quit to execute it.
+Save and quit to execute it, quit without saving to cancel it.
+
+!!! tip
+    
+    If you get an error like `bash: emacs: command not found...`, that means you haven't set the
+    EDITOR or VISUAL variable, defaulting it to emacs. Set it with `export EDITOR=vim` or whatever
+    you prefer, and add it to your `~/.bashrc` to make it permanent.
 
 ## Directory navigation
 
