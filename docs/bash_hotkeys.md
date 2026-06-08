@@ -253,3 +253,36 @@ Go the the home folder of the `foo` user. Mostly useful when logged in as `root`
 
 This is just a nice little shortcut when your home folder is in `/home` but very useful if you
 don't know where the home folder is.
+
+
+## Honorable mentions
+
+I don't use these too much yet, as I just found them on my latest trip to `man bash`, but they have potential to be useful!
+
+### Expand completions with shell braces
+
+```shell
+# Write some command that has multiple completions available
+ls -l .bash # then [Tab]
+.bash_history  .bash_logout   .bash_profile  .bashrc  
+
+++alt+{++
+
+# Will autofill to
+ls -l .bash{_{history,logout,profile},rc} 
+```
+
+### Transpose shell arguments
+
+Did you mix up the order of arguments? Typical for `ln -s` at least!
+
+```shell
+# Wrong order, /foo/bar should be last!
+ln -s /foo/bar /abc/xyz
+
+++ctrl+alt+t++
+
+# Now they're correct
+ln -s /abc/xyz /foo/bar
+
+```
