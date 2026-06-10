@@ -259,7 +259,7 @@ don't know where the home folder is.
 
 I don't use these too much yet, as I just found them on my latest trip to `man bash`, but they have potential to be useful!
 
-### ++alt+{++
+### ++alt+brace-left++
 
 Expand completions with shell braces!
 
