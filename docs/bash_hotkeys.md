@@ -33,7 +33,7 @@ alternatives. It:
 - completes environment variable names
 - completes commands and command arguments (if this doesn't work, make sure you have the
   bash-completion package installed).
-- hints at availably command arguments (note that it might not be 100% accurate or complete, it
+- hints at available command arguments (note that it might not be 100% accurate or complete, it
   depends on the content of the bash-completion script for the specific command)
 
 !!! tip
